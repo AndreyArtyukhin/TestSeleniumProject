@@ -10,7 +10,7 @@ public abstract class PageObject  {
         PageFactory.initElements(driver,this);
     }
 
-    public GismeteoPage loadpage(){
-        return new GismeteoPage(driver);
-    }
+//    public GismeteoPage loadpage(){
+//        return new GismeteoPage(driver);
+//    }
 }

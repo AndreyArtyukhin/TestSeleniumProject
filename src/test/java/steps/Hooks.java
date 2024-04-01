@@ -1,5 +1,6 @@
 package steps;
 import static Pages.MyConstants.CURRENT_TIME_DATE;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -17,12 +18,19 @@ public class Hooks {
     WebDriver driver = null;
     @Before
     public WebDriver StartDriver(){
-        System.setProperty("webdriver.chrome.driver","C:\\Soft\\chromedriver_win32\\chromedriver100.exe");
+//        System.setProperty("webdriver.chrome.driver","C:\\Soft\\chromedriver_win32\\chromedriver100.exe");
+//        ChromeOptions options = new ChromeOptions();
         ChromeOptions options = new ChromeOptions();
+        options.setAcceptInsecureCerts(true);
         if (driver==null){
              driver=new ChromeDriver(options);
         }
+//        long d=5;
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(d));
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait( );
+
+
         return driver;
     }
     @After
